@@ -3,6 +3,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+
+   <TextView
+        android:id="@+id/friendLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:text="Select Friends"
+        android:ems="10" >
+
+    </TextView>
     
+   
+   
+   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+    </TextView>
+    
+   
+   
+   <TextView
+        android:id="@+id/friend1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:text="Mario Morales"
+        android:ems="10" >
+
+    </TextView>
+    
+   <TextView
+        android:id="@+id/friend2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:text="Kojo Welbeck"
+        android:ems="10" >
+
+    </TextView>
+    
+   <TextView
+        android:id="@+id/friend3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:text="Peter Lee"
+        android:ems="10" >
+
+    </TextView>
+    
+   <TextView
+        android:id="@+id/friend4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:text="Jane Doe"
+        android:ems="10" >
+
+    </TextView>
+    
+   <TextView
+        android:id="@+id/friend5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:text="Kevin Smith"
+        android:ems="10" >
+
+    </TextView>
 
 </LinearLayout>
