@@ -69,6 +69,10 @@ public class NewPingActivity extends Activity {
 		startActivity(selectFriendsIntent);
 	}
 	
+	public void cancel(View view){
+		finish();
+	}
+	
 	public void readdData(ArrayList<String> d){
 		newPingTitleField.setText(d.get(0));
 		newPingLocationField.setText(d.get(1));
