@@ -26,6 +26,7 @@ public class NewPingActivity extends FragmentActivity {
 	private List<String> data_to_send;
 	private EditText newPingTitleField;
 	private EditText newPingLocationField;
+	private EditText newPingDateField ;
 	private EditText newPingTimeField ;
 	//private EditText newPingInvitedFriendsField;
 	private Button selectFriendsButton;
@@ -45,6 +46,7 @@ public class NewPingActivity extends FragmentActivity {
 		
 		newPingTitleField = (EditText) findViewById(R.id.title_field);
 		newPingLocationField = (EditText) findViewById(R.id.location_field);
+		newPingDateField = (EditText) findViewById(R.id.date_field);
 		newPingTimeField = (EditText) findViewById(R.id.time_field);
 		//newPingInvitedFriendsField = (EditText) findViewById(R.id.invited_friends_field);
 		selectFriendsButton = (Button) findViewById(R.id.select_friends_button);
@@ -58,6 +60,7 @@ public class NewPingActivity extends FragmentActivity {
 				//if(getFragmentManager().findFragmentById(R.id.fragment) == null) {
 				data_to_send.add(0, newPingTitleField.getText().toString());
 				data_to_send.add(0, newPingLocationField.getText().toString());
+				data_to_send.add(0, newPingDateField.getText().toString());
 				data_to_send.add(0, newPingTimeField.getText().toString());
 				
 				Intent selectFriendsIntent = new Intent(NewPingActivity.this, SelectFriendsActivity.class);

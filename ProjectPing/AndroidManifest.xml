@@ -30,6 +30,10 @@
             android:name="com.example.ping.SelectFriendsActivity"
             android:label="@string/title_activity_select_friends" >
         </activity>
+        <activity
+            android:name="com.example.ping.PingEvent"
+            android:label="@string/title_activity_ping_event" >
+        </activity>
     </application>
 
 </manifest>

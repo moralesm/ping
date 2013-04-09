@@ -16,5 +16,8 @@
     <string name="blank"></string>
     <string name="title_activity_select_friends">SelectFriendsActivity</string>
     <string name="done">Done</string>
+    <string name="title_activity_ping_event">PingEvent</string>
+    <string name="date">Date</string>
+    <string name="new_ping">Create a new Ping...</string>
 
 </resources>
