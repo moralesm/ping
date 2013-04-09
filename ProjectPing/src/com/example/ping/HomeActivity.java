@@ -18,5 +18,7 @@ public class HomeActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_home, menu);
 		return true;
 	}
+	
+	//comment to test git push
 
 }
