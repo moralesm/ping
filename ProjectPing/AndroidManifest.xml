@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ping"
     android:versionCode="1"
@@ -22,8 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="NewPingActivity" 
-            android:label="@string/title_activity_new_ping">
+        <activity
+            android:name="com.example.ping.NewPingActivity"
+            android:label="@string/title_activity_new_ping" >
+        </activity>
+        <activity
+            android:name="com.example.ping.SelectFriendsActivity"
+            android:label="@string/title_activity_select_friends" >
         </activity>
     </application>
 
