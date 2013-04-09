@@ -22,9 +22,9 @@ public class HomeActivity extends Activity {
 	}
 	
 	public void newPing(View view){
-		Intent intent = new Intent(HomeActivity.this, NewPingActivity.class);
-		intent.putExtra("test", "We're trying to pass this value to a new Activity");
-		HomeActivity.this.startActivity(intent);
+		Intent newPingIntent = new Intent(HomeActivity.this, NewPingActivity.class);
+		newPingIntent.putExtra("test", "We're trying to pass this value to a new Activity");
+		HomeActivity.this.startActivity(newPingIntent);
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.example.ping;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import android.os.Bundle;
@@ -8,26 +7,25 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 
 public class SelectFriendsActivity extends Activity {
 	
 	private CheckBox friend1, friend2, friend3, friend4, friend5;
 	private ArrayList<CheckBox> contacts;
-	private ArrayList<String> friendsSelected;
-	private Button selectionDoneButton;
+	private ArrayList<String> friendsSelected = new ArrayList<String>();
+	//private Button selectionDoneButton;
 	
-	
-	private Intent intent = getIntent();
-	private ArrayList<String> data_recieved = intent.getStringArrayListExtra("data");
-	
-	private ArrayList data_to_send = new ArrayList();
+	private Intent intent;
+	private ArrayList<String> data_received;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_select_friends);
+		
+		intent = getIntent();
+		data_received = intent.getStringArrayListExtra("data");
 		
 		friend1 = (CheckBox) findViewById(R.id.friend1);
 		friend2 = (CheckBox) findViewById(R.id.friend2);
@@ -41,29 +39,24 @@ public class SelectFriendsActivity extends Activity {
 		contacts.add(friend4);
 		contacts.add(friend5);
 		
-		selectionDoneButton = (Button) findViewById(R.id.select_friends_done_button);
-		selectionDoneButton.setOnClickListener(new Button.OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				for (CheckBox i: contacts){
-					if (i.isChecked()){
-						friendsSelected.add((String) i.getText());
-					}
-				}
-				data_to_send = data_recieved;
-				data_to_send.add(friendsSelected);
-				//Intent sendNewPingIntent = new Intent(SelectFriendsActivity.this,  );
-				//sendNewPingIntent.putExtra("data", data_to_send);
-			}
-			
-		});
+		//selectionDoneButton = (Button) findViewById(R.id.select_friends_done_button);
 		
-		
-		//data_recieved = intent.getStringArrayListExtra("test");
 	}
 
+	public void returnFriendsSelected(View view){
+		
+		for (CheckBox i: contacts)
+			if (i.isChecked())
+				friendsSelected.add(i.getText().toString());
+		
+		Intent friends = new Intent(this, NewPingActivity.class);
+		friends.putStringArrayListExtra("friends", friendsSelected);
+		friends.putStringArrayListExtra("data", data_received);
+		friends.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(friends);
+		
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
