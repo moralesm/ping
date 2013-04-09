@@ -2,7 +2,9 @@ package com.example.ping;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
 
 public class HomeActivity extends Activity {
 
@@ -19,6 +21,10 @@ public class HomeActivity extends Activity {
 		return true;
 	}
 	
-	//comment to test git push
+	public void newPing(View view){
+		Intent intent = new Intent(HomeActivity.this, NewPingActivity.class);
+		intent.putExtra("test", "We're trying to pass this value to a new Activity");
+		HomeActivity.this.startActivity(intent);
+	}
 
 }
