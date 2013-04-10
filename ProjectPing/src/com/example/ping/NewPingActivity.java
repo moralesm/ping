@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ public class NewPingActivity extends Activity {
 	private EditText newPingDateField;
 	private EditText newPingTimeField;
 	private TextView friendList;
+	private Button send;
 	
 	private Intent intent;
 	private ArrayList<String> data;
@@ -38,6 +40,7 @@ public class NewPingActivity extends Activity {
 		newPingDateField = (EditText) findViewById(R.id.date_field);
 		newPingTimeField = (EditText) findViewById(R.id.time_field);
 		friendList = (TextView) findViewById(R.id.friendsList);
+		send = (Button) findViewById(R.id.send);
 		
 		intent = getIntent();
 		try{
@@ -50,6 +53,8 @@ public class NewPingActivity extends Activity {
 			
 			readdData(data);
 			friendList.setText(f);
+			
+			send.setVisibility(0);
 		}
 		catch(NullPointerException e){
 			System.out.println("This is the first time we're accessing this screen");
@@ -67,6 +72,14 @@ public class NewPingActivity extends Activity {
 		Intent selectFriendsIntent = new Intent(NewPingActivity.this, SelectFriendsActivity.class);
 		selectFriendsIntent.putStringArrayListExtra("data", data_to_send);
 		startActivity(selectFriendsIntent);
+	}
+	
+	public void send(View view){
+		Intent returnHome = new Intent(this, HomeActivity.class);
+		returnHome.putStringArrayListExtra("friends", friends);
+		returnHome.putStringArrayListExtra("data", data);
+		returnHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(returnHome);
 	}
 	
 	public void cancel(View view){
