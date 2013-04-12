@@ -6,35 +6,30 @@
     android:background="#ffffff"
     tools:context=".NewPingActivity" >
 
+    <!-- android:background="#EDF1FA" -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
-		
-        <TextView
-            android:id="@+id/new_ping_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/new_ping"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="5dp"
-            />
-        
+
         <TextView
             android:id="@+id/title_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:paddingTop="40dp"
+            android:paddingTop="20dp"
             android:text="@string/title" />
 
         <EditText
             android:id="@+id/title_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/backwithblueborder"
             android:inputType="text" />
+
         <!-- android:layout_below="@id/title_label" -->
         <!-- android:layout_centerHorizontal="true" -->
 
@@ -50,12 +45,15 @@
         <EditText
             android:id="@+id/location_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="15dp"
-            android:inputType="text" />
+            android:layout_marginRight="15dp"
+            android:background="@drawable/backwithblueborder"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
         <!-- android:layout_below="@id/location_label" -->
         <!-- android:layout_centerHorizontal="true" -->
+
         <TextView
             android:id="@+id/date_label"
             android:layout_width="wrap_content"
@@ -68,11 +66,13 @@
         <EditText
             android:id="@+id/date_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="15dp"
-            android:inputType="text" />
-        
+            android:layout_marginRight="15dp"
+            android:background="@drawable/backwithblueborder"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
+
         <TextView
             android:id="@+id/time_label"
             android:layout_width="wrap_content"
@@ -85,87 +85,81 @@
         <EditText
             android:id="@+id/time_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="15dp"
-            android:inputType="text" />
-        
-        <TextView 
-            android:id="@+id/friendsList" 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp" />
-        
-        <!-- android:layout_below="@id/time_label" -->
-        <!-- android:layout_centerHorizontal="true" -->
-        <!-- <TextView -->
-        <!-- android:id="@+id/invited_friends_label" -->
-        <!-- android:paddingTop="10dp" -->
-        <!-- android:layout_below="@id/time_field" -->
-        <!-- android:layout_width="wrap_content" -->
-        <!-- android:layout_height="wrap_content" -->
-        <!-- android:layout_marginLeft="15dp" -->
-        <!-- android:text="@string/invited_friends" /> -->
+            android:layout_marginRight="15dp"
+            android:background="@drawable/backwithblueborder"
+            android:inputType="text"
+            android:paddingLeft="10dp" />
 
-
-        <!-- <EditText -->
-        <!-- android:id="@+id/invited_friends_field" -->
-        <!-- android:layout_below="@id/invited_friends_label" -->
-        <!-- android:layout_centerHorizontal="true" -->
-        <!-- android:layout_marginRight="15dp" -->
-        <!-- android:inputType="text" -->
-        <!-- android:layout_width="match_parent" -->
-        <!-- android:layout_height="wrap_content"/> -->
-
-<!-- 		<DatePicker  -->
-<!-- 		    android:id="@+id/new_ping_date_picker" -->
-<!-- 		    android:layout_width="wrap_content" -->
-<!-- 		    android:layout_heignt="wrap_" -->
-<!-- 		    />         -->
-		    
-<!-- 		<TimePicker -->
-<!--             android:id="@+id/new_ping_time_picker" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" /> -->
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/selected_friends_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:layout_marginLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/selected_friends"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/friendsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/backwithblueborder"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
 
             <Button
                 android:id="@+id/select_friends_button"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="7.5dp"
-                android:layout_marginTop="30dp"
-        		android:onClick="selectFriends"
-                android:text="@string/select_friends" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="#090974"
+                android:onClick="selectFriends"
+                android:text="@string/select_friends"
+                android:textColor="#ffffff" />
             <!-- android:layout_alignParentLeft="true" -->
             <!-- android:layout_below="@+id/time_field" -->
 
             <Button
                 android:id="@+id/cancel_button"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="#090974"
                 android:onClick="cancel"
-                android:layout_marginRight="7.5dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/cancel" />
+                android:text="@string/cancel"
+                android:textColor="#ffffff" />
             <!-- android:layout_alignParentRight="true" -->
             <!-- android:layout_below="@+id/time_field" -->
-        </LinearLayout>
 
-        <Button
-            android:id="@+id/send"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_margin="15dp"
-            android:layout_gravity="center"
-            android:visibility="gone"
-            android:onClick="send"
-            android:text="Send" />
-        
+            <Button
+                android:id="@+id/send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:background="#090974"
+                android:onClick="send"
+                android:text="Send"
+                android:textColor="#ffffff"
+                android:visibility="gone" />
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

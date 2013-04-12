@@ -4,86 +4,82 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/friendLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:padding="8dp"
-        android:text="Select Friends"
-        android:textStyle="bold" >
-    </TextView>
-
-    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" >
     </TextView>
 
-<!--     <TextView -->
-<!--         android:id="@+id/friend1" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:clickable="true" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Mario Morales" > -->
-<!--     </TextView> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/friend1" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:clickable="true" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Mario Morales" > -->
+    <!-- </TextView> -->
 
-<!--     <TextView -->
-<!--         android:id="@+id/friend2" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:clickable="true" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Kojo Welbeck" > -->
-<!--     </TextView> -->
 
-<!--     <TextView -->
-<!--         android:id="@+id/friend3" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:clickable="true" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Peter Lee" > -->
-<!--     </TextView> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/friend2" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:clickable="true" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Kojo Welbeck" > -->
+    <!-- </TextView> -->
 
-<!--     <TextView -->
-<!--         android:id="@+id/friend4" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:clickable="true" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Jane Doe" > -->
-<!--     </TextView> -->
 
-<!--     <TextView -->
-<!--         android:id="@+id/friend5" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:clickable="true" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Kevin Smith" > -->
-<!--     </TextView> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/friend3" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:clickable="true" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Peter Lee" > -->
+    <!-- </TextView> -->
 
-<!--     <TextView -->
-<!--         android:id="@+id/friendLabel" -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:ems="10" -->
-<!--         android:padding="8dp" -->
-<!--         android:text="Select Friends" -->
-<!--         android:textStyle="bold" > -->
-<!--     </TextView> -->
 
-<!--     <TextView -->
-<!--         android:layout_width="match_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:ems="10" > -->
-<!--     </TextView> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/friend4" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:clickable="true" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Jane Doe" > -->
+    <!-- </TextView> -->
+
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/friend5" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:clickable="true" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Kevin Smith" > -->
+    <!-- </TextView> -->
+
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/friendLabel" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:ems="10" -->
+    <!-- android:padding="8dp" -->
+    <!-- android:text="Select Friends" -->
+    <!-- android:textStyle="bold" > -->
+    <!-- </TextView> -->
+
+
+    <!-- <TextView -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:ems="10" > -->
+    <!-- </TextView> -->
 
     <CheckBox
         android:id="@+id/friend1"
@@ -134,12 +130,16 @@
         android:padding="8dp"
         android:text="Kevin Smith" >
     </CheckBox>
-    
+
     <Button
         android:id="@+id/select_friends_done_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="2dp"
+        android:background="#090974"
         android:onClick="returnFriendsSelected"
-        android:text="@string/done"/>
+        android:text="@string/done"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

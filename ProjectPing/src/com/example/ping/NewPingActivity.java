@@ -9,6 +9,8 @@ import android.app.Activity;
 
 import android.content.Intent;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +26,7 @@ public class NewPingActivity extends Activity {
 	private EditText newPingTimeField;
 	private TextView friendList;
 	private Button send;
+	private TextView selectedFriendsLabel;
 	
 	private Intent intent;
 	private ArrayList<String> data;
@@ -39,8 +42,9 @@ public class NewPingActivity extends Activity {
 		newPingLocationField = (EditText) findViewById(R.id.location_field);
 		newPingDateField = (EditText) findViewById(R.id.date_field);
 		newPingTimeField = (EditText) findViewById(R.id.time_field);
-		friendList = (TextView) findViewById(R.id.friendsList);
+		friendList = (EditText) findViewById(R.id.friendsList);
 		send = (Button) findViewById(R.id.send);
+		selectedFriendsLabel = (TextView) findViewById(R.id.selected_friends_label);
 		
 		intent = getIntent();
 		try{
@@ -49,9 +53,12 @@ public class NewPingActivity extends Activity {
 			
 			String f = "";
 			for(int i=0; i<friends.size(); i++)
-				f += friends.get(i) + "   ";
+				f += friends.get(i) + "\n";
 			
 			readdData(data);
+			
+			selectedFriendsLabel.setVisibility(0);
+			friendList.setVisibility(0);
 			friendList.setText(f);
 			
 			send.setVisibility(0);
@@ -96,9 +103,9 @@ public class NewPingActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_new_ping, menu);
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.activity_new_ping, menu);		
 		return true;
 	}
-
-
+	
 }
