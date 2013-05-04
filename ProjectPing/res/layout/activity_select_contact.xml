@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- <LinearLayout -->
+    <!-- android:id="@+id/search" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:orientation="horizontal" > -->
+
+    <EditText
+        android:id="@+id/selectcontactheader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#090947"
+        android:cursorVisible="true"
+        android:gravity="center_vertical"
+        android:hint="Type Here to Search Ping Contacts"
+        android:padding="10dp"
+        android:textColor="#FFFFFF"
+        android:textCursorDrawable="@null"
+        android:textSize="18dp"
+        android:textStyle="italic" />
+    <!-- </LinearLayout> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/selectcontactheader"
+        tools:context=".SelectContactActivity" >
+
+        <ListView
+            android:id="@+id/contactListView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- <Button -->
+    <!-- android:id="@+id/contactselectiondone" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_below="@id/eventsListView" -->
+    <!-- android:text="Done" -->
+    <!-- android:layout_alignParentBottom="true"/> -->
+
+</RelativeLayout>
