@@ -1,5 +1,7 @@
 package com.example.ping;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +13,9 @@ import android.widget.ListView;
 public class EventsListActivity extends Activity {
 	
 	private ListView eventsListView;
+	private Intent intent;
+	private ArrayList<String> data;
+	private ArrayList<String> friends;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,18 +26,52 @@ public class EventsListActivity extends Activity {
         {
             new Event("Dinner", "Kojo Welbeck", "Student Center","05-10-2013", "5pm" ),
             new Event("Pset Meeting", "Peter Lee", "Student Center","05-11-2013", "2pm" )
-
+            //new Event("test", "another test", "test location", "0230234", "1010pm")
 
         };
         
-        CondensedEventAdapter adapter = new CondensedEventAdapter(this, 
-                R.layout.event_list_item, event_data);
+//        ArrayList<String> f = new ArrayList<String>();
+//        f.add("Mario");
+//        f.add("test 2");
+//        f.add("Peter");
+//        event_data[2].setAttending(f);
         
-        eventsListView = (ListView) findViewById(R.id.eventsListView);
-        
-        View header = (View)getLayoutInflater().inflate(R.layout.events_list_view_header, null);
-        eventsListView.addHeaderView(header, null, false);
-        eventsListView.setAdapter(adapter);
+        intent = getIntent();
+		try{
+			data = intent.getStringArrayListExtra("data");
+			friends = intent.getStringArrayListExtra("friends");
+
+			Event event_data2[] = new Event[event_data.length + 1];
+			for(int i=0; i<event_data.length; i++)
+				event_data2[i] = event_data[i];
+			event_data2[event_data.length] = new Event(data.get(0), "Mario Morales", data.get(1), data.get(2), data.get(3));
+			
+			CondensedEventAdapter adapter = new CondensedEventAdapter(this, 
+	                R.layout.event_list_item, event_data2);
+	        
+	        eventsListView = (ListView) findViewById(R.id.eventsListView);
+	        
+	        View header = (View)getLayoutInflater().inflate(R.layout.events_list_view_header, null);
+	        eventsListView.addHeaderView(header, null, false);
+	        eventsListView.setAdapter(adapter);
+
+		}
+		catch(NullPointerException e){
+			System.out.println("This is the first time we're accessing this screen");
+			
+			
+			CondensedEventAdapter adapter = new CondensedEventAdapter(this, 
+	                R.layout.event_list_item, event_data);
+	        
+	        eventsListView = (ListView) findViewById(R.id.eventsListView);
+	        
+	        View header = (View)getLayoutInflater().inflate(R.layout.events_list_view_header, null);
+	        eventsListView.addHeaderView(header, null, false);
+	        eventsListView.setAdapter(adapter);
+			
+		}
+		
+		
 		
 	}
 

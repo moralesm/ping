@@ -93,7 +93,8 @@ public class NewPingActivity extends Activity {
 			data_to_send.add(newPingLocation.getText().toString());
 			System.out.println(newPingLocation.getText().toString());
 			
-			String date_to_send = Integer.toString(newPingDate.getMonth()) + "-" +  Integer.toString(newPingDate.getMonth()) + "-" + Integer.toString(newPingDate.getMonth());
+			String date_to_send = Integer.toString(newPingDate.getDayOfMonth()) + "-" + 
+								Integer.toString(newPingDate.getMonth()) + "-" + Integer.toString(newPingDate.getYear());
 
 			newPingTime.is24HourView();
 			String time_to_send = Integer.toString(newPingTime.getCurrentHour()) + "-" +  Integer.toString(newPingTime.getCurrentMinute()); 
@@ -109,7 +110,7 @@ public class NewPingActivity extends Activity {
 	}
 	
 	public void send(View view){
-		Intent returnHome = new Intent(this, HomeActivity.class);
+		Intent returnHome = new Intent(this, EventsListActivity.class);
 		returnHome.putStringArrayListExtra("friends", friends);
 		returnHome.putStringArrayListExtra("data", data_rcvd);
 		returnHome.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
