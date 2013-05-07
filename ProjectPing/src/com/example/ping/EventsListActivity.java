@@ -60,6 +60,11 @@ public class EventsListActivity extends Activity {
 		
 		return false;}
 	
+	public void launchEvent(View v){
+		Intent eventIntent = new Intent(EventsListActivity.this, EventDetailActivity.class);
+		EventsListActivity.this.startActivity(eventIntent);
+	}
+	
 	public void newPing(){
 		Intent newPingIntent = new Intent(EventsListActivity.this, NewPingActivity.class);
 		newPingIntent.putExtra("test", "We're trying to pass this value to a new Activity");
