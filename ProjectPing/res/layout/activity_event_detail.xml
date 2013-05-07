@@ -10,25 +10,23 @@
         android:orientation="vertical"
         tools:context=".EventDetailActivity" >
 
-        <TextView
-            android:id="@+id/eventTitle"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/lightblueback"
-            android:padding="10dp"
-            android:text="Dinner With Host"
-            android:textSize="24dp" />
+        <!-- <TextView -->
+        <!-- android:id="@+id/eventTitle" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_centerHorizontal="true" -->
+        <!-- android:gravity="center" -->
+        <!-- android:background="#090947" -->
+        <!-- android:textColor="#ffffff" -->
+        <!-- android:padding="10dp" -->
+        <!-- android:text="[Event] with [Host]" -->
+        <!-- android:textSize="20dp" /> -->
 
         <TextView
             android:id="@+id/detailsLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/eventTitle"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:text="Details"
@@ -40,7 +38,7 @@
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
+            android:background="@drawable/backwithlightblueborder"
             android:orientation="vertical"
             android:padding="10dp" >
 
@@ -49,7 +47,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_below="@id/eventTitle"
                 android:text="Location"
                 android:textSize="14dp" />
 
@@ -91,19 +88,31 @@
             android:layout_below="@id/eventDate"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
+            android:background="@drawable/backwithlightblueborder"
             android:focusable="false"
             android:textSize="14dp" />
 
-        <Switch
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp"
+        <Button
+            android:id="@+id/select_friends_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:background="#090974"
-            android:switchMinWidth="150dp"
-            android:textOff="Not Going"
-            android:textOn="Going" />
+            android:text="Going"
+            android:textColor="#ffffff" />
+        <!-- android:layout_alignParentLeft="true" -->
+        <!-- android:layout_below="@+id/time_field" -->
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:background="#090974"
+            android:text="Not Going"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
 </ScrollView>

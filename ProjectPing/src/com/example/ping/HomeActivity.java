@@ -37,7 +37,7 @@ public class HomeActivity extends Activity {
 
 		tv = (TextView) findViewById(R.id.textView1);
 
-		menu_newPing = (MenuItem) findViewById(R.id.menu_newping);
+		menu_newPing = (MenuItem) findViewById(R.id.home_menu_newping);
 
 
 		intent = getIntent();
@@ -73,11 +73,14 @@ public class HomeActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 
 		switch(item.getItemId()){
-		case R.id.menu_newping:
+		case R.id.home_menu_newping:
 			newPing();
 			return true;
 		case R.id.menu_settings:
 //			settingsPopUp.show();
+			return true;
+		case R.id.home_menu_contacts:
+			openContacts();
 			return true;
 		}
 		return false;}
@@ -89,5 +92,8 @@ public class HomeActivity extends Activity {
 		newPingIntent.putExtra("test", "We're trying to pass this value to a new Activity");
 		HomeActivity.this.startActivity(newPingIntent);
 	}
-
+	public void openContacts(){
+		Intent openContactsIntent = new Intent(HomeActivity.this, EventsListActivity.class);
+		openContactsIntent.putExtra("test", "We're trying to pass this value to a new Activity");
+		HomeActivity.this.startActivity(openContactsIntent);}
 }

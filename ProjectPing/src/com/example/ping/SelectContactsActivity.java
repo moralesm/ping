@@ -20,9 +20,6 @@ public class SelectContactsActivity extends Activity {
 	Intent rcvdIntent;
 	ArrayList<String> friends;
 	
-
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -104,7 +101,7 @@ public class SelectContactsActivity extends Activity {
 		friendsSelectedIntent.putStringArrayListExtra("data",data_rcvd);
 		friendsSelectedIntent.putStringArrayListExtra("friends", friends);
 	}
-
+//
 //	public void contactClicked(View v){
 //		if (((CheckBox)v).isChecked()){
 //			friends.add(v.getText());

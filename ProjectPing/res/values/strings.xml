@@ -21,5 +21,9 @@
     <string name="selected_friends">Selected Friends</string>
     <string name="title_activity_events_list">EventsListActivity</string>
     <string name="title_activity_event_detail">EventDetailActivity</string>
+    <string name="title_activity_event_messages">EventMessagesActivity</string>
+    <string name="contacts_label">Contacts</string>
+    <string name="title_activity_select_contact">Select Contacts</string>
+    <string name="settings_label">Settings</string>
 
 </resources>

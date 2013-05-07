@@ -27,7 +27,9 @@
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
+            android:paddingBottom = "10dp"
+            android:paddingLeft = "10dp"
+            android:background="@drawable/backwithlightblueborder"
             android:inputType="text" />
 
         <!-- android:layout_below="@id/title_label" -->
@@ -48,9 +50,10 @@
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
+            android:background="@drawable/backwithlightblueborder"
             android:inputType="text"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp" 
+            android:paddingBottom ="10dp"/>
         <!-- android:layout_below="@id/location_label" -->
         <!-- android:layout_centerHorizontal="true" -->
 
@@ -63,15 +66,25 @@
             android:text="@string/date" />
         <!-- android:layout_below="@id/location_field" -->
 
-        <EditText
-            android:id="@+id/date_field"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
-            android:inputType="text"
-            android:paddingLeft="10dp" />
+		<DatePicker
+		    android:id="@+id/newping_datepicker"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="10dp"
+		    android:paddingBottom="10dp" 
+		    android:calendarViewShown="false"
+		    android:layout_gravity="center_horizontal"/>
+
+<!--         <EditText -->
+<!--             android:id="@+id/date_field" -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="40dp" -->
+<!--             android:layout_marginLeft="15dp" -->
+<!--             android:layout_marginRight="15dp" -->
+<!--             android:background="@drawable/backwithlightblueborder" -->
+<!--             android:inputType="text" -->
+<!--             android:paddingLeft="10dp" /> -->
 
         <TextView
             android:id="@+id/time_label"
@@ -81,16 +94,24 @@
             android:paddingTop="10dp"
             android:text="@string/time" />
         <!-- android:layout_below="@id/location_field" -->
-
-        <EditText
-            android:id="@+id/time_field"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
-            android:inputType="text"
-            android:paddingLeft="10dp" />
+		<TimePicker
+		    android:id="@+id/newping_timepicker"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="10dp"
+		    android:paddingBottom="10dp" 
+		    android:calendarViewShown="false"
+		    android:layout_gravity="center_horizontal"/>
+<!--         <EditText -->
+<!--             android:id="@+id/time_field" -->
+<!--             android:layout_width="match_parent" -->
+<!--             android:layout_height="40dp" -->
+<!--             android:layout_marginLeft="15dp" -->
+<!--             android:layout_marginRight="15dp" -->
+<!--             android:background="@drawable/backwithlightblueborder" -->
+<!--             android:inputType="text" -->
+<!--             android:paddingLeft="10dp" /> -->
 
         <TextView
             android:id="@+id/selected_friends_label"
@@ -107,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/backwithblueborder"
+            android:background="@drawable/backwithlightblueborder"
             android:clickable="false"
             android:cursorVisible="false"
             android:focusable="false"
