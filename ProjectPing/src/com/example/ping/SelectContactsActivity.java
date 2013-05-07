@@ -18,7 +18,9 @@ public class SelectContactsActivity extends Activity {
 
 	ArrayList<String> data_rcvd;
 	Intent rcvdIntent;
-	ArrayList<String> friends;
+	ArrayList<String> friends = new ArrayList<String>();
+	Contact[] contact_data;
+	ContactAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +31,20 @@ public class SelectContactsActivity extends Activity {
 
 
 
-		Contact[] contact_data = new Contact[]
+		contact_data = new Contact[]
 				{
-				new Contact("Firstname Lastname", "#########","example@example.com"),
-				new Contact("Firstname1 Lastname1", "#########1","example@example.com1"),
-				new Contact("Firstname2 Lastname2", "#########2","example@example.com2"),
-				new Contact("Firstname3 Lastname3", "#########3","example@example.com3"),
-				new Contact("Firstname4 Lastname4", "#########4","example@example.com4"),
+				new Contact("Mario Morales", "#########","example@example.com"),
+				new Contact("Kojo Welbeck", "#########1","example@example.com1"),
+				new Contact("Peter Lee", "#########2","example@example.com2"),
+				new Contact("John Smith", "#########3","example@example.com3"),
+				new Contact("Jane Doe", "#########4","example@example.com4"),
 				new Contact("Firstname5 Lastname5", "#########5","example@example.com5"),
 				new Contact("Firstname6 Lastname6", "#########6","example@example.com6"),
 				new Contact("Firstname7 Lastname7", "#########7","example@example.com7"),
 
 				};
 
-		ContactAdapter adapter = new ContactAdapter(this, 
+		adapter = new ContactAdapter(this, 
 				R.layout.contact_list_item, contact_data);
 
 		contactListView = (ListView) findViewById(R.id.contactListView);
@@ -96,15 +98,19 @@ public class SelectContactsActivity extends Activity {
 
 	public void sendSelectedFriends(){
 
-
+		try{
+			for (CheckBox i: adapter.contacts)
+				if (i.isChecked())
+					friends.add(i.getText().toString());
+		}
+		catch(Exception e){
+			System.out.println("why is there an error here? 123");
+		}
+		
 		Intent friendsSelectedIntent= new Intent(SelectContactsActivity.this, NewPingActivity.class );
 		friendsSelectedIntent.putStringArrayListExtra("data",data_rcvd);
 		friendsSelectedIntent.putStringArrayListExtra("friends", friends);
+		startActivity(friendsSelectedIntent);
 	}
-//
-//	public void contactClicked(View v){
-//		if (((CheckBox)v).isChecked()){
-//			friends.add(v.getText());
-//		}
-//	}
+	
 }

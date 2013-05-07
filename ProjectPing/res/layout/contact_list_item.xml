@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:textColor="#000000"
-        android:textSize="16dp" 
-        android:onClick="contactClicked"/>
+        android:textSize="16dp" />
 
     <!-- <TextView -->
     <!-- android:id="@+id/contactEmail" -->

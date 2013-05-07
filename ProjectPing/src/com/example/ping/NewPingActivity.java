@@ -75,7 +75,7 @@ public class NewPingActivity extends Activity {
 
 			send.setVisibility(0);
 		}
-		catch(NullPointerException e){
+		catch(Exception e){
 			System.out.println("This is the first time we're accessing this screen");
 		}
 
@@ -107,6 +107,7 @@ public class NewPingActivity extends Activity {
 			startActivity(selectFriendsIntent);
 		}
 	}
+	
 	public void send(View view){
 		Intent returnHome = new Intent(this, HomeActivity.class);
 		returnHome.putStringArrayListExtra("friends", friends);

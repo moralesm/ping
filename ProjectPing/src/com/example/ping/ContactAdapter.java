@@ -1,6 +1,8 @@
 
 package com.example.ping;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +16,7 @@ public class ContactAdapter extends ArrayAdapter<Contact>{//the select contact l
 	Context context; 
 	int layoutResourceId;    
 	Contact[] data = null;
+	ArrayList<CheckBox> contacts = new ArrayList<CheckBox>();
 
 	public ContactAdapter(Context context, int layoutResourceId, Contact[] data) {
 		super(context, layoutResourceId, data);
@@ -26,7 +29,7 @@ public class ContactAdapter extends ArrayAdapter<Contact>{//the select contact l
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View row = convertView;
 		ContactHolder holder = null;
-
+		
 		if(row == null)
 		{
 			LayoutInflater inflater = ((Activity)context).getLayoutInflater();
@@ -36,6 +39,8 @@ public class ContactAdapter extends ArrayAdapter<Contact>{//the select contact l
 			holder.txtName = (CheckBox)row.findViewById(R.id.contactName);
 //			holder.txtNumber = (TextView)row.findViewById(R.id.contactNumber);
 //			holder.txtEmail = (TextView)row.findViewById(R.id.contactEmail);
+			
+			contacts.add((CheckBox) holder.txtName);
 
 
 			row.setTag(holder);
